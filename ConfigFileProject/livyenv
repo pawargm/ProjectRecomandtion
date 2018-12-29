@@ -1,0 +1,4 @@
+export SPARK_HOME=/usr/lib/spark
+export HADOOP_CONF_DIR=/etc/hadoop/conf
+export LIVY_CONF_DIR=/home/gpawar916/LIVYCONF/
+
