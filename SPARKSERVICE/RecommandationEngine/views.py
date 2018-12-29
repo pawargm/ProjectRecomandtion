@@ -224,7 +224,7 @@ def response_springbootarg(req):
 	user_id = req.GET['arg']
 	connection = getClient()
 	db = connection[userRec]
-	lst_records = db[colRec].find({"userID":int(user_id)})
+	lst_records = db[colRec].find({"userID":str(user_id)})
 
 	if lst_records.count() != 0:
 		lst = []
