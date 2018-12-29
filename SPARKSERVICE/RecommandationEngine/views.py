@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from TimeDiff import updateInterval
 from TimeDiff import getClient
 from TimeDiff import getTimeStamp
-from TimeDiff import getTimeStampUserID
+from TimeDiff import getTimeStampByUserID
 from pymongo import MongoClient
 from bson.json_util import dumps
 from django.http import JsonResponse
