@@ -69,8 +69,9 @@ def delete_stale_result(req):
 	if data_present(userID):
 
 		if time_stamp_model > time_stamp_recom:
-			print("Modle is updated no need to update model again")
-			return HttpResponse("justpolling");
+			print("Modle is updated need for predittionresult")
+                        remove_by_id("RecommandationDB","RecommandationCol",userID)
+			return HttpResponse("predictiononly");
 		else:
 			diff = time_stamp_recom[0] - time_stamp_model[0]
 			if diff.days == 0:
