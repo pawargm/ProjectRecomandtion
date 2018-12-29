@@ -47,7 +47,7 @@ model.save(sc,newpath)
 print "Saved new Model to Pth"+newpath
 db[PathCol].update({"path":tmppath},{"path":newpath})
 print "Modified path in DB"
-os.system("hdfs dfs -rm "+tmppath)
+os.system("hdfs dfs -rmr "+tmppath)
 print "Removed Old Model"
 
 
