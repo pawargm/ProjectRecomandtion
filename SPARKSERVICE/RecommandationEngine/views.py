@@ -41,7 +41,7 @@ def data_present(userid):
 
 	con = get_connection()
 	db1 = con[userRec]
-	lst_records = db1[colRec].find({"userID":int(userid)})
+	lst_records = db1[colRec].find({"userID":str(userid)})
 
 	if lst_records.count() != 0:
 		return True
@@ -59,8 +59,10 @@ def delete_stale_result(req):
 	time_stamp_recom = getTimeStampByUserID("RecommandationDB","RecommandationCol",userID)#getTimeStamp("RecommandationDB","RecommandationCol")
 
 	#userID = int(req.GET['arg'])
-
+        print len(time_stamp_model)
+        print len(time_stamp_recom)
         if len(time_stamp_model) == 0 or len(time_stamp_recom) == 0:
+            print "in null condition"
             return HttpResponse("predictiononly");
 
 	#Check First required result is database

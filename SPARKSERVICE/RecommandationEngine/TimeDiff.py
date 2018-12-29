@@ -24,14 +24,16 @@ def getTimeStamp(dbstr,colstr):
 	#print str(time_stamp)
 	return time_stamp
 	
-def getTimeStampByUserID(dbatr,colstr,userid):
+def getTimeStampByUserID(dbstr,colstr,userid):
 
     client = getClient()
     db = client[dbstr]
-    last_updated = db[colstr].find({"userID":userid})
+    last_updated = db[colstr].find({"userID":str(userid)})
     time_stamp = []
-
-    for doc in lat_updated:
+    print "Last Updated"
+    print last_updated
+    for doc in last_updated:
+        print doc
         time_stamp.append(doc['_id'].generation_time)
         break
     return time_stamp
